@@ -1,0 +1,126 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+<style>
+
+    p {
+        
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 300px;
+        /*border-right: 4px solid #c0ded9;*/
+        margin-top:.5em;
+    }
+        .column:last-child {
+            border-right: none;
+        }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    h2 {
+        /*border-bottom: 4px solid #c0ded9;*/
+        /*border-radius: 3px;*/
+        /*box-shadow: 1px 1px 1px black;*/
+        /*border-radius: 10px 10px 0 0;*/
+        /*background-color: #c0ded9;*/
+        /*padding: 0 .4em;*/
+        /*text-align:center;*/
+    }
+
+    .panel {
+        padding: 0.01em 16px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        background-color: #c0ded9;
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    .w3-left, .w3-right, .w3-badge {
+        cursor: pointer
+    }
+
+    .w3-badge {
+        height: 13px;
+        width: 13px;
+        padding: 0
+    }
+
+    .container {
+        position: relative;
+        font-family: Arial;
+    }
+
+    .text-block {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: black;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+</style>
+
+<div class="container">
+    <img src="~/images/wood-textures.jpg" alt="Nature" style="width:100%;">
+    <div class="text-block">
+        <h4>Wood</h4>
+        <p>Very good quality</p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="column">
+        <h2>Working from home?</h2>
+        <p>We got you covered! We build the sturdiest desk around. They are toddler and children proof! You can also add an extra warrenty
+        in case anythig happens. We make sure there are no sharp edges for the little ones!</p>
+    </div>
+    <div class="column">
+        <h2>Time for college?
+        
+        </h2>
+        <p>For our college students we provide a space effcient desk that performs well and saves on space. It is expandble and easy to use! 
+        If you want to rein in your inner hiptser we can even send it with a plant for the indoors!</p>
+    </div>
+    <div class="column">
+        <h2>For the office?</h2>
+        <p>Whether your office has a open or closed office space we got you covered! We can make it so that it meets your needs. We provide mass orders
+        to fit the needs of a large company order. We even make a few extra exactly like the one you order in case you need more!</p>
+    </div>
+</div>
+
+<div class="w3-container">
+    <div class="w3-panel w3-leftbar w3-light-grey">
+        <p class="w3-xlarge w3-serif"><i>"It's pointless to have a nice clean desk, because it means you're not doing anything."</i></p>
+        <p>Michio Kaku</p>
+    </div>
+</div>
+
+<div class="panel"><p>Create by the team Francis and Israel</p></div>

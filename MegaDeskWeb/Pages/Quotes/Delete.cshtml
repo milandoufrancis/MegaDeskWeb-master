@@ -1,0 +1,39 @@
+﻿@page
+@model MegaDeskWeb.Pages.Quotes.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<form method="post" class="form-group">
+    <input type="hidden" asp-for="Quote.ID" />
+    <input type="hidden" asp-for="Quote.DeskID" />
+    <div class="form-group">
+        <label class="control-label" asp-for="Quote.CustomerName"></label>
+        <div class="form-control">@Model.Quote.CustomerName</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" asp-for="Quote.RushID"></label>
+        <div class="form-control">@Model.Quote.Rush.friendlyName</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" asp-for="Quote.Desk.depth"></label>
+        <div class="form-control">@Model.Quote.Desk.depth</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" asp-for="Quote.Desk.width"></label>
+        <div class="form-control">@Model.Quote.Desk.width</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" asp-for="Quote.Desk.drawers"></label>
+        <div class="form-control">@Model.Quote.Desk.drawers</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" asp-for="Quote.Desk.materialID"></label>
+        <div class="form-control">@Model.Quote.Desk.Material.type</div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-warning" />
+    </div>
+</form>

@@ -1,0 +1,55 @@
+@page
+@model MegaDeskWeb.Pages.Desks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].depth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].drawers)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Desk[0].material)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Desk) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.depth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.drawers)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.material.type)
+                @Html.DisplayFor(modelItem => Model.Material)
+            </td>*@
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

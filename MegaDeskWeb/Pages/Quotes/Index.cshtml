@@ -1,0 +1,66 @@
+﻿@page "{searchString?}"
+@model MegaDeskWeb.Pages.QuotesModel
+@{
+    ViewData["Title"] = "Quotes";
+}
+
+<h2>Quotes</h2>
+<form>
+    <p>
+        Title: <input type="text" value="@Model.searchString" name="SearchString">
+        <input type="submit" class="btn btn-info" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Rush)
+            </th>
+                        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DeskQuote)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desk.friendlyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rush.friendlyName)
+                </td>
+                <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                        @*<a asp-page="./Details" asp-route-id="@item.ID">Details</a> |*@
+                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-page="Add" class="pull-right btn btn-primary">Create New</a>
+</p>
+
